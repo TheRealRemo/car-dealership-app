@@ -6,7 +6,9 @@ Briefly describe what this Java console application does. Mention its purpose an
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
+- As a sales manager, I would like to be able to search for vehicles by price range, so that I can specify cars within a customer's budget
+- As a sales manager, I would like to be able to search for vehicles by make and model, so that I can specify my search to exactly what a customer wants
+
 
 
 ## Setup
