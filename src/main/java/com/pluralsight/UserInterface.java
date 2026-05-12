@@ -4,12 +4,16 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class UserInterface {
-  private Dealership  dealership;
+  private Dealership dealership;
 
   public UserInterface() {
   }
-  private void init(){}
+  private void init(){
+    DealershipFileManager dealershipFileManager = new DealershipFileManager();
+     this.dealership = dealershipFileManager.getDealership();
+  }
   public void display(){ Scanner scanner = new Scanner(System.in);
+
     init();
     boolean running = true;
 
@@ -31,7 +35,7 @@ public class UserInterface {
       System.out.println("========================");
       System.out.print("Please enter here: ");
       String input = scanner.nextLine().trim();
-      if (input.equalsIgnoreCase("x")) {
+      if (input.equalsIgnoreCase("X")) {
         System.out.println("Goodbye!");
       }
 
