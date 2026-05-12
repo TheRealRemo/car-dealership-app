@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -61,9 +62,16 @@ public class UserInterface {
   public void processGetByColorRequest(){}
   public void processGetByMileageRequest(){}
   public void processGetByVehicleTypeRequest(){}
-  public void processGetAllVehiclesRequest(){}
+  public void processGetAllVehiclesRequest(){
+   List<Vehicle> vehicles = dealership.getAllVehicles();
+    displayVehicles(vehicles);
+  }
   public void processAddVehicleRequest(){}
   public void processRemoveVehicleRequest(){}
-
+private void displayVehicles(List<Vehicle> vehicles){
+    for (Vehicle vehicle : vehicles){
+      System.out.println(vehicle);
+    }
+}
 
 }
