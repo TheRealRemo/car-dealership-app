@@ -2,10 +2,21 @@ package com.pluralsight;
 
 public class CarDealershipApp {
     public static void main(String[] args) {
-        add();
+
+
+
+    UserInterface userInterface = new UserInterface();
+    userInterface.display();
+
+
+
+
+
+
+
+
+
+
     }
 
-    public static void add() {
-
-    }
 }
