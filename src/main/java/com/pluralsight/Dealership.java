@@ -35,34 +35,48 @@ public class Dealership {
     }
 
     //Methods
-    public List<Vehicle> getVehiclesByPrice(double min, double max){
+    public List<Vehicle> getVehiclesByPrice(double min, double max) {
+         List<Vehicle> filteredList = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                filteredList.add(vehicle);
+
+            }
+        }
+        return filteredList;
+    }
+
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
 
         return null;
     }
-    public List<Vehicle> getVehiclesByMakeModel(String make, String model){
+
+    public List<Vehicle> getVehiclesByYear(int min, int max) {
 
         return null;
     }
-    public List<Vehicle> getVehiclesByYear(int min, int max){
 
+    public List<Vehicle> getVehiclesByColor(String color) {
         return null;
     }
-    public List<Vehicle> getVehiclesByColor(String color){
+
+    public List<Vehicle> getVehiclesByMileage(int min, int max) {
         return null;
     }
-    public List<Vehicle> getVehiclesByMileage(int min, int max){
+
+    public List<Vehicle> getVehiclesByVehicleType(String vehicleType) {
         return null;
     }
-    public List<Vehicle> getVehiclesByVehicleType(String vehicleType){
-        return null;
-    }
-    public List<Vehicle> getAllVehicles(){
+
+    public List<Vehicle> getAllVehicles() {
         return inventory;
     }
-    public void addVehicle(Vehicle vehicle){
+
+    public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
     }
-    public void removeVehicle(Vehicle vehicle){
+
+    public void removeVehicle(Vehicle vehicle) {
 
     }
 }

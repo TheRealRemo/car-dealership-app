@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class UserInterface {
   private Dealership dealership;
+  private Scanner scanner = new Scanner(System.in);
 
   public UserInterface() {
   }
@@ -13,7 +14,7 @@ public class UserInterface {
     DealershipFileManager dealershipFileManager = new DealershipFileManager();
      this.dealership = dealershipFileManager.getDealership();
   }
-  public void display(){ Scanner scanner = new Scanner(System.in);
+  public void display(){
 
     init();
     boolean running = true;
@@ -56,7 +57,16 @@ public class UserInterface {
     }
     scanner.close();
   }
-  public void processGetByPriceRequest(){}
+  public void processGetByPriceRequest(){
+    System.out.print("Please input minimum price: ");
+     double minPrice = scanner.nextDouble();
+    System.out.print("Please input maximum price: ");
+    double maxPrice = scanner.nextDouble();
+    scanner.nextLine();
+
+    List<Vehicle> vehicles = dealership.getVehiclesByPrice(minPrice, maxPrice);
+    displayVehicles(vehicles);
+  }
   public void processGetByMakeModelRequest(){}
   public void processGetByYearRequest(){}
   public void processGetByColorRequest(){}
@@ -65,6 +75,7 @@ public class UserInterface {
   public void processGetAllVehiclesRequest(){
    List<Vehicle> vehicles = dealership.getAllVehicles();
     displayVehicles(vehicles);
+
   }
   public void processAddVehicleRequest(){}
   public void processRemoveVehicleRequest(){}

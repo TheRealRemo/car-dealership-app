@@ -6,8 +6,6 @@ public class CarDealershipApp {
 
 
     UserInterface userInterface = new UserInterface();
-    DealershipFileManager dealershipFileManager = new DealershipFileManager();
-    dealershipFileManager.getDealership();
     userInterface.display();
 
 
