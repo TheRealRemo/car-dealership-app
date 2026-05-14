@@ -47,8 +47,15 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        List<Vehicle> filteredList = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
+                filteredList.add(vehicle);
 
-        return null;
+            }
+        }
+        return filteredList;
+    }
     }
 
     public List<Vehicle> getVehiclesByYear(int min, int max) {
@@ -67,7 +74,14 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByMileage(int min, int max) {
-        return null;
+        List<Vehicle> filteredList = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                filteredList.add(vehicle);
+
+            }
+        }
+        return filteredList;
     }
 
     public List<Vehicle> getVehiclesByVehicleType(String vehicleType) {
