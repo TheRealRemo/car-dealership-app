@@ -36,11 +36,10 @@ public class Dealership {
 
     //Methods
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
-         List<Vehicle> filteredList = new ArrayList<>();
+        List<Vehicle> filteredList = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
             if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;
@@ -51,7 +50,6 @@ public class Dealership {
         for (Vehicle vehicle : inventory) {
             if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;
@@ -63,7 +61,6 @@ public class Dealership {
         for (Vehicle vehicle : inventory) {
             if (vehicle.getYear() >= min && vehicle.getYear() <= max) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;
@@ -72,9 +69,8 @@ public class Dealership {
     public List<Vehicle> getVehiclesByColor(String color) {
         List<Vehicle> filteredList = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
-            if (vehicle.getColor().equalsIgnoreCase(color)){
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;
@@ -85,7 +81,6 @@ public class Dealership {
         for (Vehicle vehicle : inventory) {
             if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;
@@ -94,9 +89,8 @@ public class Dealership {
     public List<Vehicle> getVehiclesByVehicleType(String vehicleType) {
         List<Vehicle> filteredList = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
-            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)){
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
                 filteredList.add(vehicle);
-
             }
         }
         return filteredList;

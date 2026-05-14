@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class UserInterface {
     private Dealership dealership;
     private Scanner scanner = new Scanner(System.in);
+    private DealershipFileManager dealershipFileManager = new DealershipFileManager();
 
     public UserInterface() {
     }
 
     private void init() {
-        DealershipFileManager dealershipFileManager = new DealershipFileManager();
         this.dealership = dealershipFileManager.getDealership();
     }
 
@@ -129,6 +129,28 @@ public class UserInterface {
     }
 
     public void processAddVehicleRequest() {
+        System.out.print("Please enter the vin of the new vehicle: ");
+        int vin = scanner.nextInt();
+        System.out.println("Please enter the year of the new vehicle: ");
+        int year = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Please enter the make of the new vehicle: ");
+        String make = scanner.nextLine();
+        System.out.println("Please enter the model of the new vehicle: ");
+        String model = scanner.nextLine();
+        System.out.println("Please enter the type of the new vehicle: ");
+        String vehicleType = scanner.nextLine();
+        System.out.println("Please enter the color of the new vehicle: ");
+        String color = scanner.nextLine();
+        System.out.println("Please enter the mileage of the new vehicle: ");
+        int odometer = scanner.nextInt();
+        System.out.println("Please enter the price of the new vehicle: ");
+        double price = scanner.nextInt();
+        scanner.nextLine();
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+        dealership.addVehicle(vehicle);
+        dealershipFileManager.saveDealership(dealership);
+        System.out.println(vehicle.getMake() + " " + vehicle.getModel() + " Added Successfully!");
     }
 
     public void processRemoveVehicleRequest() {

@@ -1,9 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -50,6 +47,19 @@ public class DealershipFileManager {
         return dealership;
     }
 
-    public void saveDealership(Dealership dealership){}
+    public void saveDealership(Dealership dealership) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("dealership.csv"));
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            writer.newLine();
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                writer.write(vehicle.toString());
+                writer.newLine();
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Write Error");
+        }
+    }
 }
 
