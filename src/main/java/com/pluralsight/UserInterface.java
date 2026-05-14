@@ -68,7 +68,16 @@ public class UserInterface {
     displayVehicles(vehicles);
   }
   public void processGetByMakeModelRequest(){}
-  public void processGetByYearRequest(){}
+  public void processGetByYearRequest(){
+    System.out.print("Please input minimum year: ");
+    int minYear = scanner.nextInt();
+    System.out.print("Please input maximum year: ");
+    int maxYear = scanner.nextInt();
+    scanner.nextLine();
+
+    List<Vehicle> vehicles = dealership.getVehiclesByYear(minYear, maxYear);
+    displayVehicles(vehicles);
+  }
   public void processGetByColorRequest(){}
   public void processGetByMileageRequest(){}
   public void processGetByVehicleTypeRequest(){}
