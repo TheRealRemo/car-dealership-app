@@ -72,6 +72,14 @@ public class UserInterface {
     }
 
     public void processGetByMakeModelRequest() {
+        System.out.print("Please input make: ");
+        String make = scanner.nextLine();
+        System.out.print("Please input model: ");
+        String model = scanner.nextLine();
+
+
+        List<Vehicle> vehicles = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(vehicles);
     }
 
     public void processGetByYearRequest() {
@@ -86,6 +94,12 @@ public class UserInterface {
     }
 
     public void processGetByColorRequest() {
+        System.out.print("Please input color: ");
+        String color = scanner.nextLine();
+
+
+        List<Vehicle> vehicles = dealership.getVehiclesByColor(color);
+        displayVehicles(vehicles);
     }
 
     public void processGetByMileageRequest() {
