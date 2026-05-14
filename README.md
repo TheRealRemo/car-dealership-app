@@ -44,8 +44,6 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
-
 - More error catches and input validation.
 
 ## Resources
